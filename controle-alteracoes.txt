@@ -1,0 +1,7 @@
+github commit: --170924 --1932h
+O projeto parou na parte de deletar eventos da pagina ver_eventos.php
+	> é necessário corrigir o encaminhamento de volta para a página ver_eventos.php
+	> após isso, verificar o style dos botoes de editar e excluir evento que bugou
+	> após isso, criar o cadastrar_usuario.php e ver_usuarios.php
+
+---
