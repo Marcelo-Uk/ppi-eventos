@@ -12,49 +12,7 @@ if ($_SESSION['role'] !== 'admin') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #f1f1f1;
-            padding: 10px;
-            text-align: center;
-        }
-        header img {
-            vertical-align: middle;
-        }
-        header a {
-            float: right;
-            margin-right: 20px;
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
-        }
-        .container {
-            text-align: center;
-            margin-top: 50px;
-        }
-        .container button {
-            padding: 10px 20px;
-            margin: 10px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        footer {
-            background-color: #f1f1f1;
-            padding: 10px;
-            text-align: center;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-    </style>
+    <link rel="stylesheet" href="/eventos/public/css/style.css">
 </head>
 <body>
     <header>

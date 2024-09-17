@@ -1,0 +1,95 @@
+/* Estilos gerais para o modo escuro */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212; /* Cor de fundo escura */
+    color: #e0e0e0; /* Cor do texto clara */
+}
+
+header {
+    background-color: #1f1f1f; /* Fundo escuro no header */
+    padding: 10px;
+    text-align: center;
+}
+
+header img {
+    vertical-align: middle;
+}
+
+header a {
+    float: right;
+    margin-right: 20px;
+    text-decoration: none;
+    color: #bb86fc; /* Texto com cor diferenciada */
+    font-weight: bold;
+}
+
+.container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.container button {
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #bb86fc; /* Botões com cor diferenciada */
+    color: #121212; /* Texto escuro para contraste nos botões */
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.container button:hover {
+    background-color: #3700b3; /* Efeito ao passar o mouse */
+}
+
+/* Ajustes adicionais */
+h1 {
+    color: #bb86fc; /* Destaque nos títulos */
+}
+
+form {
+    width: 300px;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+}
+input, textarea {
+    margin-bottom: 10px;
+    padding: 8px;
+    font-size: 16px;
+}
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #bb86fc; /* Botões com cor diferenciada */
+    color: #121212; /* Texto escuro para contraste nos botões */
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+.message {
+    text-align: center;
+    color: green;
+}
+
+footer {
+    background-color: #1f1f1f; /* Rodapé escuro */
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    color: #e0e0e0;
+}
+
+.button-2 {
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #bb86fc; /* Botões com cor diferenciada */
+    color: #121212; /* Texto escuro para contraste nos botões */
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
