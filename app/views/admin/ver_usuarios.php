@@ -16,6 +16,7 @@ if ($_SESSION['role'] !== 'admin') {
 <body>
     <header>
         <img src="/eventos/assets/logo.png" alt="Logo" width="100">
+        <a href="/eventos/app/views/admin/dashboard.php">Home</a>
         <a href="/eventos/app/controllers/LogoutController.php">Sair</a>
     </header>
 

@@ -7,27 +7,64 @@ body {
     color: #e0e0e0; /* Cor do texto clara */
 }
 
-header {
-    background-color: #1f1f1f; /* Fundo escuro no header */
-    padding: 10px;
-    text-align: center;
+.main-container {
+
 }
 
-header img {
-    vertical-align: middle;
+.main-container-header {
+    background-color: #280142;
+    height: 80px;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
-header a {
-    float: right;
-    margin-right: 20px;
-    text-decoration: none;
-    color: #bb86fc; /* Texto com cor diferenciada */
-    font-weight: bold;
+.header-logo{
+    background-color: yellow;
+}
+
+.header-botoes {
+    width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 }
 
 .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     margin-top: 50px;
+}
+
+.container-dashboard{
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    align-items: center;
+}
+
+.img-logo {
+    height: 80px;
+}
+
+.button-header{
+    border: none;
+    background-color: #bb86fc; /* Botões com cor diferenciada */
+    color: #121212; /* Texto escuro para contraste nos botões */
+    padding: 15px 32px;
+    font-size: 16px;
+    border-radius: 10px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.button-header:hover {
+    background-color: #8b78b6; /* Efeito ao passar o mouse */
 }
 
 .container button {
@@ -41,34 +78,99 @@ header a {
 }
 
 .container button:hover {
-    background-color: #3700b3; /* Efeito ao passar o mouse */
+    background-color: #8b78b6; /* Efeito ao passar o mouse */
 }
+
+/* Estilos gerais para o formulário */
+
+.container-forms-main{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+.container-forms {
+    width: 600px;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #ad9bd4;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+    align-items: center;
+}
+
+.container-forms h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+/* Estilos para os inputs e textarea */
+.container-forms input[type="text"],
+.container-forms input[type="date"],
+.container-forms textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #fff;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.container-forms textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.container-forms input:focus,
+.container-forms textarea:focus {
+    border-color: #bb86fc;
+    outline: none;
+}
+
+/* Estilo para os botões */
+.container-forms button {
+    width: 100%;
+    padding: 12px;
+    background-color: #280142;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.container-forms button:hover {
+    background-color: #440f68;
+}
+
+/* Labels */
+.container-forms label {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Estilo para o form */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
 
 /* Ajustes adicionais */
 h1 {
     color: #bb86fc; /* Destaque nos títulos */
 }
 
-form {
-    width: 300px;
-    margin: 50px auto;
-    display: flex;
-    flex-direction: column;
-}
-input, textarea {
-    margin-bottom: 10px;
-    padding: 8px;
-    font-size: 16px;
-}
-button {
-    padding: 10px 20px;
-    margin: 10px;
-    background-color: #bb86fc; /* Botões com cor diferenciada */
-    color: #121212; /* Texto escuro para contraste nos botões */
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-}
 .message {
     text-align: center;
     color: green;
@@ -88,7 +190,7 @@ footer {
     padding: 10px 20px;
     margin: 10px;
     background-color: #bb86fc; /* Botões com cor diferenciada */
-    color: #121212; /* Texto escuro para contraste nos botões */
+    color: #7e76af; /* Texto escuro para contraste nos botões */
     border: none;
     cursor: pointer;
     font-size: 16px;

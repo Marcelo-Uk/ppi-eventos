@@ -1,13 +1,15 @@
 <?php
 session_start();
 
-require_once '../config/database.php';
-require_once '../app/models/LoginModel.php';
+// Incluindo o arquivo com a definição da classe Database
+require_once __DIR__ . '/../../config/database.php';
+require_once __DIR__ . '/../models/LoginModel.php';
 
 class LoginController {
     private $loginModel;
 
     public function __construct() {
+        // Criando uma nova instância da classe Database
         $database = new Database();
         $db = $database->getConnection();
         $this->loginModel = new LoginModel($db);
@@ -37,3 +39,5 @@ class LoginController {
     }
 }
 
+$controller = new LoginController();
+$controller->login();

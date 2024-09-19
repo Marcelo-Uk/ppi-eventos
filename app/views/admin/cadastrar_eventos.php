@@ -21,11 +21,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $descricao = $_POST['descricao'];
 
     if (!empty($nome) && !empty($data) && !empty($local)) {
-        // Usando a conexão do arquivo database.php
-        $query = "INSERT INTO eventos (nome, data, local, descricao) VALUES ($1, $2, $3, $4)";
-        $result = pg_query_params($conn, $query, array($nome, $data, $local, $descricao));
-
-        if ($result) {
+        // Usando a conexão do arquivo database.php com PDO
+        $query = "INSERT INTO eventos (nome, data, local, descricao) VALUES (:nome, :data, :local, :descricao)";
+        $stmt = $conn->prepare($query);
+        
+        // Vincular parâmetros
+        $stmt->bindParam(':nome', $nome);
+        $stmt->bindParam(':data', $data);
+        $stmt->bindParam(':local', $local);
+        $stmt->bindParam(':descricao', $descricao);
+        
+        // Executar a query e verificar se funcionou
+        if ($stmt->execute()) {
             $message = "Evento cadastrado com sucesso!";
             // Limpar campos após inserção
             $_POST = array();
@@ -47,29 +54,51 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="/eventos/public/css/style.css">
 </head>
 <body>
-    <header>
-        <img src="/eventos/assets/logo.png" alt="Logo" width="100">
-        <a href="/eventos/app/controllers/LogoutController.php">Sair</a>
-    </header>
+    <div class="main-container">
+        <div class="main-container-header">
+            <div class="header-logo">
+                <img class="img-logo" src="/eventos/assets/logo.png" alt="Logo">
+            </div>
+            <div class="header-botoes">
+                <button class="button-header" onclick="window.location.href='/eventos/app/views/admin/dashboard.php'">Home</button>
+                <button class="button-header" onclick="window.location.href='/eventos/app/controllers/LogoutController.php'">Sair</button>
+            </div>
 
-    <div class="container">
-        <h1>Formulário para Cadastrar Evento</h1>
+        </div>
+        <div class="container-forms-main">
 
-        <form method="POST" action="">
-            <input type="text" name="nome" placeholder="Nome do Evento" value="<?php echo isset($_POST['nome']) ? htmlspecialchars($_POST['nome']) : ''; ?>" required>
-            <input type="date" name="data" value="<?php echo isset($_POST['data']) ? htmlspecialchars($_POST['data']) : ''; ?>" required>
-            <input type="text" name="local" placeholder="Local do Evento" value="<?php echo isset($_POST['local']) ? htmlspecialchars($_POST['local']) : ''; ?>" required>
-            <textarea name="descricao" placeholder="Descrição do Evento"><?php echo isset($_POST['descricao']) ? htmlspecialchars($_POST['descricao']) : ''; ?></textarea>
-            <button type="submit">Salvar</button>
-        </form>
+            <div class="container-forms">
+                <h1>Preencha os Dados do Evento</h1>
+
+                <form method="POST" action="">
+                    <label for="nome">Nome do Evento</label>
+                    <input type="text" name="nome" placeholder="Nome do Evento" value="<?php echo isset($_POST['nome']) ? htmlspecialchars($_POST['nome']) : ''; ?>" required>
+
+                    <label for="data">Data</label>
+                    <input type="date" name="data" value="<?php echo isset($_POST['data']) ? htmlspecialchars($_POST['data']) : ''; ?>" required>
+
+                    <label for="local">Local</label>
+                    <input type="text" name="local" placeholder="Local do Evento" value="<?php echo isset($_POST['local']) ? htmlspecialchars($_POST['local']) : ''; ?>" required>
+
+                    <label for="descricao">Descrição</label>
+                    <textarea name="descricao" placeholder="Descrição do Evento"><?php echo isset($_POST['descricao']) ? htmlspecialchars($_POST['descricao']) : ''; ?></textarea>
+
+                    <button type="submit">Salvar</button>
+                </form>
+            </div>
+        </div>
+
+
+        <?php if (!empty($message)): ?>
+            <p class="message"><?php echo $message; ?></p>
+        <?php endif; ?>
+        
+        <div class="container-footer">
+            <footer>
+                <p>&copy; 2024 Sistema Eventos - PPI</p>
+            </footer>
+        </div>
+
     </div>
-
-    <?php if (!empty($message)): ?>
-        <p class="message"><?php echo $message; ?></p>
-    <?php endif; ?>
-
-    <footer>
-        <p>&copy; 2024 Sistema Eventos - PPI</p>
-    </footer>
 </body>
 </html>

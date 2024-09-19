@@ -15,23 +15,36 @@ if ($_SESSION['role'] !== 'admin') {
     <link rel="stylesheet" href="/eventos/public/css/style.css">
 </head>
 <body>
-    <header>
-        <img src="/eventos/assets/logo.png" alt="Logo" width="100">
-        <a href="/eventos/app/controllers/LogoutController.php">Sair</a>
-    </header>
+    <div class="main-container">
+        <div class="main-container-header">
+                <div class="header-logo">
+                    <img class="img-logo" src="/eventos/assets/logo.png" alt="Logo">
+                </div>
+                <div class="header-botoes">
+                    <button class="button-header" onclick="window.location.href='/eventos/app/views/admin/dashboard.php'">Home</button>
+                    <button class="button-header" onclick="window.location.href='/eventos/app/controllers/LogoutController.php'">Sair</button>
+                </div>
+        </div>
+        <div class="container-dashboard">
+            <div class="container-dashboard-title">
+                <h1>Bem-vindo, Admin!</h1>
+            </div>  
+            
+            <div class="container-dashboard-botoes">
+                <!-- Botões para funcionalidades -->
+                <button class="button-header" onclick="window.location.href='/eventos/app/views/admin/cadastrar_eventos.php'">Cadastrar Eventos</button>
+                <button class="button-header" onclick="window.location.href='/eventos/app/views/admin/ver_eventos.php'">Ver Eventos Cadastrados</button>
+                <button class="button-header" onclick="window.location.href='/eventos/app/views/admin/cadastrar_usuarios.php'">Cadastrar Usuários</button>
+                <button class="button-header" onclick="window.location.href='/eventos/app/views/admin/ver_usuarios.php'">Ver Usuários Cadastrados</button>
+            </div>
+        </div>
 
-    <div class="container">
-        <h1>Bem-vindo, Admin!</h1>
-
-        <!-- Botões para funcionalidades -->
-        <button onclick="window.location.href='/eventos/app/views/admin/ver_eventos.php'">Ver Eventos Cadastrados</button>
-        <button onclick="window.location.href='/eventos/app/views/admin/ver_usuarios.php'">Ver Usuários Cadastrados</button>
-        <button onclick="window.location.href='/eventos/app/views/admin/cadastrar_eventos.php'">Cadastrar Eventos</button>
-        <button onclick="window.location.href='/eventos/app/views/admin/cadastrar_usuarios.php'">Cadastrar Usuários</button>
+        <div class="container-footer">
+            <footer>
+                <p>&copy; 2024 Sistema Eventos - PPI</p>
+            </footer>
+        </div>
     </div>
-
-    <footer>
-        <p>&copy; 2024 Sistema Eventos - PPI || Devs: Marcelo-Uk | Matheus Marinho | Frederico Andre</p>
-    </footer>        
+       
 </body>
 </html>
