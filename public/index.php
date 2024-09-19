@@ -9,7 +9,9 @@
 <body>
     <div class="login-container">
         <div class="login-box">
-            <h2>Login</h2>
+            <div class="header-logo">
+                <img class="img-logo" src="/eventos/assets/logo.png" alt="Logo">
+            </div>
             <form method="POST" action="login.php">
                 <label for="email">Email</label>
                 <input type="email" name="email" placeholder="Digite seu email" required>

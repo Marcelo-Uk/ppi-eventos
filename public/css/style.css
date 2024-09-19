@@ -21,7 +21,8 @@ body {
 }
 
 .header-logo{
-    background-color: yellow;
+    background-color: #280142;
+    margin-bottom: 10px;
 }
 
 .header-botoes {
