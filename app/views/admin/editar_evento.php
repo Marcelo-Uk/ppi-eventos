@@ -57,30 +57,37 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <div class="main-container">
         <div class="main-container-header">
-            <header>
-                <img src="/eventos/assets/logo.png" alt="Logo" width="100">
-                <a href="/eventos/app/views/admin/dashboard.php">Home</a>
-                <a href="/eventos/app/controllers/LogoutController.php">Sair</a>
-            </header>
+            <div class="header-logo">
+                <img class="img-logo" src="/eventos/assets/logo.png" alt="Logo">
+            </div>
+            <div class="header-botoes">
+                <button class="button-header" onclick="window.location.href='/eventos/app/views/admin/dashboard.php'">Home</button>
+                <button class="button-header" onclick="window.location.href='/eventos/app/controllers/LogoutController.php'">Sair</button>
+            </div>
         </div>
-        <div class="container">
-            <h1>Editar Evento</h1>
-            <form action="editar_evento.php" method="POST">
-                <input type="hidden" name="id" value="<?php echo htmlspecialchars($event['id']); ?>">
-                <label for="nome">Nome do Evento:</label><br>
-                <input type="text" name="nome" value="<?php echo htmlspecialchars($event['nome']); ?>" required><br>
 
-                <label for="data">Data:</label><br>
-                <input type="date" name="data" value="<?php echo htmlspecialchars($event['data']); ?>" required><br>
+        <div class="container-forms-main">
+            <div class="container-forms">
+                <h1>Editar Evento</h1>
 
-                <label for="local">Local:</label><br>
-                <input type="text" name="local" value="<?php echo htmlspecialchars($event['local']); ?>" required><br>
+                <form action="editar_evento.php" method="POST">
+                    <input type="hidden" name="id" value="<?php echo htmlspecialchars($event['id']); ?>">
 
-                <label for="descricao">Descrição:</label><br>
-                <textarea name="descricao" required><?php echo htmlspecialchars($event['descricao']); ?></textarea><br>
+                    <label for="nome">Nome do Evento</label>
+                    <input type="text" name="nome" value="<?php echo htmlspecialchars($event['nome']); ?>" required>
 
-                <button type="submit">Salvar Alterações</button>
-            </form>
+                    <label for="data">Data</label>
+                    <input type="date" name="data" value="<?php echo htmlspecialchars($event['data']); ?>" required>
+
+                    <label for="local">Local</label>
+                    <input type="text" name="local" value="<?php echo htmlspecialchars($event['local']); ?>" required>
+
+                    <label for="descricao">Descrição</label>
+                    <textarea name="descricao" required><?php echo htmlspecialchars($event['descricao']); ?></textarea>
+
+                    <button type="submit">Salvar Alterações</button>
+                </form>
+            </div>
         </div>
 
         <div class="container-footer">

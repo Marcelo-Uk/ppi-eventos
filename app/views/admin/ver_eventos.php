@@ -60,7 +60,6 @@ if (!$result) {
                         <th>Nome do Evento</th>
                         <th>Data</th>
                         <th>Local</th>
-                        <th>Descrição</th>
                         <th>Ações</th>
                     </tr>
                     <?php foreach ($result as $row) { ?>
@@ -68,7 +67,6 @@ if (!$result) {
                             <td><?php echo htmlspecialchars($row['nome']); ?></td>
                             <td><?php echo htmlspecialchars($row['data']); ?></td>
                             <td><?php echo htmlspecialchars($row['local']); ?></td>
-                            <td><?php echo htmlspecialchars($row['descricao']); ?></td>
                             <td>
                                 <!-- Botão de editar -->
                                 <a href="/eventos/app/views/admin/editar_evento.php?id=<?php echo $row['id']; ?>">
@@ -76,7 +74,7 @@ if (!$result) {
                                 </a>
 
                                 <!-- Botão de deletar -->
-                                <form method="POST" action="/eventos/app/controllers/DeleteEventController.php" onsubmit="return confirm('Tem certeza que deseja excluir este evento?');">
+                                <form method="POST" action="/eventos/app/controllers/DeleteEventController.php" style="display:inline;" onsubmit="return confirm('Tem certeza que deseja excluir este evento?');">
                                     <input type="hidden" name="id" value="<?php echo htmlspecialchars($row['id']); ?>">
                                     <button class="button-header" type="submit">Excluir</button>
                                 </form>

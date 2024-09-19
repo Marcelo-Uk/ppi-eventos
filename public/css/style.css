@@ -269,3 +269,44 @@ footer {
 .login-box button:hover {
     background-color: #440f68;
 }
+
+/* Estilos para o botão de Participar */
+.button-participar {
+    border: none;
+    background-color: #28a745; /* Cor verde para o botão de participar */
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.button-participar:hover {
+    background-color: #218838;
+}
+
+/* Estilos para o botão de Cancelar Participação */
+.button-cancelar {
+    border: none;
+    background-color: #dc3545; /* Cor vermelha para o botão de cancelar */
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.button-cancelar:hover {
+    background-color: #c82333;
+}
+
+.container-details {
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+

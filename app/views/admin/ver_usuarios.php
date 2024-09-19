@@ -71,7 +71,7 @@ if (!$result) {
                     </a>
 
                     <!-- Botão de deletar -->
-                    <form method="POST" action="/eventos/app/controllers/DeleteUserController.php" onsubmit="return confirm('Tem certeza que deseja excluir este usuário?');">
+                    <form method="POST" action="/eventos/app/controllers/DeleteUserController.php" style="display:inline;" onsubmit="return confirm('Tem certeza que deseja excluir este usuário?');">
                         <input type="hidden" name="id" value="<?php echo htmlspecialchars($row['id']); ?>">
                         <button class="button-header" type="submit">Excluir</button>
                     </form>

@@ -65,31 +65,37 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <div class="main-container">
         <div class="main-container-header">
-            <header>
-                <img src="/eventos/assets/logo.png" alt="Logo" width="100">
-                <a href="/eventos/app/views/admin/dashboard.php">Home</a>
-                <a href="/eventos/app/controllers/LogoutController.php">Sair</a>
-            </header>
+            <div class="header-logo">
+                <img class="img-logo" src="/eventos/assets/logo.png" alt="Logo">
+            </div>
+            <div class="header-botoes">
+                <button class="button-header" onclick="window.location.href='/eventos/app/views/admin/dashboard.php'">Home</button>
+                <button class="button-header" onclick="window.location.href='/eventos/app/controllers/LogoutController.php'">Sair</button>
+            </div>
         </div>
-        <div class="container">
-            <h1>Editar Usuário</h1>
-            <form action="editar_usuario.php" method="POST">
-                <input type="hidden" name="id" value="<?php echo htmlspecialchars($user['id']); ?>">
-                
-                <label for="email">Email do Usuário:</label><br>
-                <input type="email" name="email" value="<?php echo htmlspecialchars($user['email']); ?>" required><br>
-                
-                <label for="password">Nova Senha (deixe em branco se não quiser alterar):</label><br>
-                <input type="password" name="password"><br>
-                
-                <label for="role">Função:</label><br>
-                <select name="role" required>
-                    <option value="admin" <?php echo ($user['role'] === 'admin') ? 'selected' : ''; ?>>Admin</option>
-                    <option value="user" <?php echo ($user['role'] === 'user') ? 'selected' : ''; ?>>Usuário</option>
-                </select><br>
 
-                <button type="submit">Salvar Alterações</button>
-            </form>
+        <div class="container-forms-main">
+            <div class="container-forms">
+                <h1>Editar Usuário</h1>
+
+                <form action="editar_usuario.php" method="POST">
+                    <input type="hidden" name="id" value="<?php echo htmlspecialchars($user['id']); ?>">
+
+                    <label for="email">Email do Usuário:</label>
+                    <input type="email" name="email" value="<?php echo htmlspecialchars($user['email']); ?>" required>
+
+                    <label for="password">Nova Senha (deixe em branco se não quiser alterar):</label>
+                    <input type="password" name="password">
+
+                    <label for="role">Função:</label>
+                    <select name="role" required>
+                        <option value="admin" <?php echo ($user['role'] === 'admin') ? 'selected' : ''; ?>>Admin</option>
+                        <option value="user" <?php echo ($user['role'] === 'user') ? 'selected' : ''; ?>>Usuário</option>
+                    </select>
+
+                    <button type="submit">Salvar Alterações</button>
+                </form>
+            </div>
         </div>
 
         <div class="container-footer">
