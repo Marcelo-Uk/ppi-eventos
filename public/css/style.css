@@ -7,10 +7,6 @@ body {
     color: #e0e0e0; /* Cor do texto clara */
 }
 
-.main-container {
-
-}
-
 .main-container-header {
     background-color: #280142;
     height: 80px;
@@ -18,6 +14,10 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Para garantir que o header fique acima do conteúdo */
 }
 
 .header-logo{
@@ -38,13 +38,13 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 100px; /* Adiciona um espaço para o conteúdo começar abaixo do header fixo */
 }
 
 .container-dashboard{
     display: flex;
     flex-direction: column;
-    margin-top: 50px;
+    margin-top: 80px;
     align-items: center;
 }
 
@@ -87,6 +87,7 @@ body {
     width: 100%;
     display: flex;
     justify-content: center;
+    margin-top: 80px;
 }
 
 
@@ -109,9 +110,13 @@ body {
 }
 
 /* Estilos para os inputs e textarea */
+/* Estilos para inputs e textarea (já existente) */
 .container-forms input[type="text"],
 .container-forms input[type="date"],
-.container-forms textarea {
+.container-forms input[type="email"],
+.container-forms input[type="password"],
+.container-forms textarea,
+.container-forms select {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
@@ -123,13 +128,17 @@ body {
     transition: border-color 0.3s ease;
 }
 
-.container-forms textarea {
-    resize: vertical;
-    min-height: 100px;
+/* Estilo para o select */
+.container-forms select {
+    appearance: none;
+    background-color: #fff;
+    color: #333;
 }
 
+/* Foco nos campos */
 .container-forms input:focus,
-.container-forms textarea:focus {
+.container-forms textarea:focus,
+.container-forms select:focus {
     border-color: #bb86fc;
     outline: none;
 }
@@ -138,6 +147,7 @@ body {
 .container-forms button {
     width: 100%;
     padding: 12px;
+    margin-top: 20px;
     background-color: #280142;
     color: white;
     border: none;
@@ -155,7 +165,6 @@ body {
 .container-forms label {
     font-size: 14px;
     color: #333;
-    margin-bottom: 5px;
     display: block;
 }
 
@@ -173,7 +182,11 @@ h1 {
 
 .message {
     text-align: center;
-    color: green;
+    color: #bfa3e2;
+}
+
+.container-footer {
+    padding-bottom: 60px; /* Adiciona espaço para que o conteúdo não seja coberto pelo footer */
 }
 
 footer {
@@ -184,6 +197,7 @@ footer {
     width: 100%;
     bottom: 0;
     color: #e0e0e0;
+    z-index: 1000;
 }
 
 .button-2 {
